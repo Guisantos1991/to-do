@@ -14,7 +14,7 @@ addTaskButton!.addEventListener('click', () => {
             <button class="completeBtn">Concluir</button>
         `;
 
-        const totalTasks = document.getElementById('totalTasks');
+        const totalTasks = document.getElementById('totalTasks') as HTMLElement;
         totalTasks.textContent = `Total de Tarefas: ${taskList!.childElementCount}`;
 
         const completeBtn = taskItem.querySelector('.completeBtn') as HTMLButtonElement;
@@ -24,7 +24,7 @@ addTaskButton!.addEventListener('click', () => {
 
             completeBtn.textContent = taskItem.classList.contains('completed') ? 'Concluido' : 'Concluir';
 
-            const completedCount = taskList.querySelectorAll('.completed').length;
+            const completedCount = taskList!.querySelectorAll('.completed').length;
             finishedTasks.textContent = `Concluídas: ${completedCount}`;
 
     })
@@ -41,8 +41,8 @@ taskInput.addEventListener('keydown', (event) => {
 
 clearAll!.addEventListener('click', () => {
     const taskList = document.getElementById('taskList');
-    const totalTasks = document.getElementById('totalTasks');
-    const finishedTasks = document.getElementById('completedTasks');
+    const totalTasks = document.getElementById('totalTasks') as HTMLElement;
+    const finishedTasks = document.getElementById('completedTasks') as HTMLElement;
     
     taskList!.innerHTML = '';
     totalTasks.textContent = 'Total: 0';
