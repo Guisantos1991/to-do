@@ -7,7 +7,7 @@ addTaskButton!.addEventListener('click', () => {
     if (taskText !== '') {
         const taskList = document.getElementById('taskList');
         const taskItem = document.createElement('li');
-        taskItem.textContent = taskText;
+        
         taskList!.appendChild(taskItem);
         taskItem.innerHTML = `
             <span>${taskText}</span>
@@ -15,9 +15,7 @@ addTaskButton!.addEventListener('click', () => {
         `;
 
         const totalTasks = document.getElementById('totalTasks');
-        totalTasks.textContent = `
-            Total de Tarefas: ${taskList!.childElementCount}
-        `;
+        totalTasks.textContent = `Total de Tarefas: ${taskList!.childElementCount}`;
 
         const completeBtn = taskItem.querySelector('.completeBtn') as HTMLButtonElement;
         completeBtn.addEventListener('click', () => {
